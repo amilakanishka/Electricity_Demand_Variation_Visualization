@@ -98,3 +98,7 @@ function buildPlot(participant,jurisdiction,custType,meterType) {
 
 }  
 
+function init(){
+    handleSubmit();
+}
+

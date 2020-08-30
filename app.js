@@ -102,3 +102,5 @@ function init(){
     handleSubmit();
 }
 
+init();
+

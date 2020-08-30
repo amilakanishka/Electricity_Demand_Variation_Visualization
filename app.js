@@ -99,7 +99,7 @@ function buildPlot(participant,jurisdiction,custType,meterType) {
 }  
 
 function init(){
-    handleSubmit();
+    buildPlot('CONTACTA','ACT', 'CnI','C');
 }
 
 init();

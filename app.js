@@ -97,7 +97,7 @@ function buildPlot(participant,jurisdiction,custType,meterType) {
 
         var trace1 = {
             type: "scatter",
-            mode: "lines",
+            mode: "lines+markers",
             name: '2017',
             x: bp2017,
             y: demand2017
@@ -105,21 +105,21 @@ function buildPlot(participant,jurisdiction,custType,meterType) {
 
           var trace2 = {
             type: "scatter",
-            mode: "lines",
+            mode: "lines+markers",
             name: '2018',
             x: bp2018,
             y: demand2018
           };  
           var trace3 = {
             type: "scatter",
-            mode: "lines",
+            mode: "lines+markers",
             name: '2019',
             x: bp2019,
             y: demand2019
           };  
           var trace4 = {
             type: "scatter",
-            mode: "lines",
+            mode: "lines+markers",
             name: '2020',
             x: bp2020,
             y: demand2020

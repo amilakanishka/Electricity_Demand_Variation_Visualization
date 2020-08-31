@@ -48,7 +48,7 @@ function buildPlot(participant,jurisdiction,custType,meterType) {
                                 for (const [k6, v6] of Object.entries(v5)) {
                                     for (const [k7, v7] of Object.entries(v6)) { 
                                         if(v7.value){
-                                            bplist.push(parseDate(v1.key));
+                                            bplist.push(v1.key);
                                             
                                             demadlist.push(v7.value);  
                                         }   
@@ -62,21 +62,70 @@ function buildPlot(participant,jurisdiction,custType,meterType) {
                 }
             }
         }
-        console.log(bplist);
-        console.log(demadlist);
+
+        console.log(bplist)
+
+        bp2017 = [];
+        bp2018 = [];
+        bp2019 = [];
+        bp2020 = [];
+        demand2017 = [];
+        demand2018 = [];
+        demand2019 = [];
+        demand2020 = [];
+        var index = 0;
+
+        bplist.forEach(wk => {
+            if (index < 52){
+                bp2017.push(bplist[index].toString().substring(4));
+                demand2017.push(demadlist[index]);
+            } 
+            if((index > 51) && (index < 104)){
+                bp2018.push(bplist[index].toString().substring(4));
+                demand2018.push(demadlist[index]);                
+            }
+            if((index > 103) && (index < 156)){
+                bp2019.push(bplist[index].toString().substring(4));
+                demand2019.push(demadlist[index]);                
+            }
+            if((index > 155) && (index < 208)){
+                bp2020.push(bplist[index].toString().substring(4));
+                demand2020.push(demadlist[index]);                
+            }            
+            index ++;
+        });
 
         var trace1 = {
             type: "scatter",
             mode: "lines",
-            name: name,
-            x: bplist,
-            y: demadlist,
-            line: {
-              color: "#17BECF"
-            }
+            name: '2017',
+            x: bp2017,
+            y: demand2017
           };
+
+          var trace2 = {
+            type: "scatter",
+            mode: "lines",
+            name: '2018',
+            x: bp2018,
+            y: demand2018
+          };  
+          var trace3 = {
+            type: "scatter",
+            mode: "lines",
+            name: '2019',
+            x: bp2019,
+            y: demand2019
+          };  
+          var trace4 = {
+            type: "scatter",
+            mode: "lines",
+            name: '2020',
+            x: bp2020,
+            y: demand2020
+          };                          
       
-          var data = [trace1];
+          var data = [trace1,trace2,trace3,trace4];
       
           var layout = {
             xaxis: {

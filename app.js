@@ -128,7 +128,7 @@ function buildPlot(participant,jurisdiction,custType,meterType) {
           var layout = {
             xaxis: {
                 title: {
-                  text: 'Billing Period'
+                  text: 'Billing Period Weeks'
                   }
             },
             yaxis: {

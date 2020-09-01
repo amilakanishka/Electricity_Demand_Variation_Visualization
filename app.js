@@ -63,8 +63,6 @@ function buildPlot(participant,jurisdiction,custType,meterType) {
             }
         }
 
-        console.log(bplist)
-
         bp2017 = [];
         bp2018 = [];
         bp2019 = [];

@@ -133,7 +133,7 @@ function buildPlot(participant,jurisdiction,custType,meterType) {
             },
             yaxis: {
                 title: {
-                    text: 'MW'
+                    text: 'MWh'
                     },
               autorange: true,
               type: "linear"
